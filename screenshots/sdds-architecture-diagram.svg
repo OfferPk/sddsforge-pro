@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="1000" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060912"/>
+      <stop offset="100%" stop-color="#0c1322"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121c32"/>
+      <stop offset="100%" stop-color="#192744"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="600" fill="url(#bgGrad)" />
+
+  <!-- Header -->
+  <text x="40" y="45" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="700" fill="#ffffff">SDDSForge Pro — System Architecture</text>
+  <text x="40" y="70" font-family="JetBrains Mono, monospace" font-size="12" fill="#00e5ff">CCSDS 854.0-M-1 SOIS SUBNETWORK DEVICE DISCOVERY SERVICE (SDDS) ARCHITECTURE</text>
+
+  <!-- Application Layer (Top) -->
+  <rect x="40" y="100" width="920" height="90" rx="8" fill="url(#cardGrad)" stroke="#213252" stroke-width="1.5" />
+  <rect x="40" y="100" width="920" height="30" rx="8" fill="#0e172a" />
+  <text x="55" y="121" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="#ffffff">1. Spacecraft Flight Software Application Entities (PnP Topology &amp; FDIR)</text>
+
+  <g transform="translate(60, 140)">
+    <rect x="0" y="0" width="200" height="40" rx="4" fill="#070c18" stroke="#00e5ff" />
+    <text x="100" y="24" font-family="JetBrains Mono, monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">Onboard Topology Manager</text>
+
+    <rect x="230" y="0" width="200" height="40" rx="4" fill="#070c18" stroke="#00e676" />
+    <text x="330" y="24" font-family="JetBrains Mono, monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">Dynamic PnP Autoconfig</text>
+
+    <rect x="460" y="0" width="200" height="40" rx="4" fill="#070c18" stroke="#ffab00" />
+    <text x="560" y="24" font-family="JetBrains Mono, monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">Fault Detection &amp; Isolation</text>
+
+    <rect x="690" y="0" width="190" height="40" rx="4" fill="#070c18" stroke="#2979ff" />
+    <text x="785" y="24" font-family="JetBrains Mono, monospace" font-size="11" fill="#cbd5e1" text-anchor="middle">Electronic Datasheet Binder</text>
+  </g>
+
+  <!-- Service Primitives Callout (Arrows) -->
+  <g transform="translate(450, 195)">
+    <path d="M 0 0 L 0 25" stroke="#00e5ff" stroke-width="2" />
+    <polygon points="-4,25 0,33 4,25" fill="#00e5ff" />
+    <text x="15" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e5ff">DISCOVERY / LOSS Primitives (§3.2)</text>
+  </g>
+
+  <!-- SDDS Service Layer (Middle) -->
+  <rect x="40" y="235" width="920" height="150" rx="8" fill="url(#cardGrad)" stroke="#00e5ff" stroke-width="1.5" />
+  <rect x="40" y="235" width="920" height="30" rx="8" fill="#0e172a" />
+  <text x="55" y="256" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="#00e5ff">2. SOIS Subnetwork Device Discovery Service (SDDS) Engine</text>
+
+  <g transform="translate(60, 275)">
+    <rect x="0" y="0" width="270" height="95" rx="6" fill="#070c18" stroke="#213252" />
+    <text x="15" y="25" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#00e5ff">Device Address Resolution (§3.1.2)</text>
+    <text x="15" y="45" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">• Abstract Subnetwork Address</text>
+    <text x="15" y="63" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">• SpaceWire LA / 1553 RT / CAN Node</text>
+    <text x="15" y="81" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e676">• BROADCAST_SCAN Support</text>
+
+    <rect x="305" y="0" width="270" height="95" rx="6" fill="#070c18" stroke="#213252" />
+    <text x="15" y="25" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#00e676">Metadata &amp; PnP Monitor (§3.1.3)</text>
+    <text x="15" y="45" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">• Vendor / Product / Revision ID</text>
+    <text x="15" y="63" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">• Solicited vs Autonomous Modes</text>
+    <text x="15" y="81" font-family="JetBrains Mono, monospace" font-size="10" fill="#ffab00">• SEDS URI Schema Resolution</text>
+
+    <rect x="610" y="0" width="270" height="95" rx="6" fill="#070c18" stroke="#213252" />
+    <text x="15" y="25" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" fill="#ff1744">Fault &amp; Loss Detection (§3.2.4)</text>
+    <text x="15" y="45" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">• Heartbeat Timeout Watchdogs</text>
+    <text x="15" y="63" font-family="JetBrains Mono, monospace" font-size="10" fill="#94a3b8">• Physical Disconnect Alarms</text>
+    <text x="15" y="81" font-family="JetBrains Mono, monospace" font-size="10" fill="#ff1744">• DEVICE_DISCOVERY_LOSS Delivery</text>
+  </g>
+
+  <!-- Subnetwork Downlink Arrow -->
+  <g transform="translate(450, 390)">
+    <path d="M 0 0 L 0 25" stroke="#00e676" stroke-width="2" />
+    <polygon points="-4,25 0,33 4,25" fill="#00e676" />
+    <text x="15" y="20" font-family="JetBrains Mono, monospace" font-size="10" fill="#00e676">Subnetwork Protocol Discovery Adapters (§2.3)</text>
+  </g>
+
+  <!-- Physical Subnetwork Layer (Bottom) -->
+  <rect x="40" y="430" width="920" height="135" rx="8" fill="url(#cardGrad)" stroke="#213252" stroke-width="1.5" />
+  <rect x="40" y="430" width="920" height="30" rx="8" fill="#0e172a" />
+  <text x="55" y="451" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="#ffffff">3. Spacecraft Physical Onboard Subnetworks</text>
+
+  <g transform="translate(60, 470)">
+    <rect x="0" y="0" width="270" height="80" rx="6" fill="#070c18" stroke="#00e5ff" />
+    <text x="15" y="23" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#00e5ff">SpaceWire PnP (ECSS-E-ST-50-52C)</text>
+    <text x="15" y="42" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8">• Protocol ID 0x00 Network Discovery</text>
+    <text x="15" y="58" font-family="JetBrains Mono, monospace" font-size="9" fill="#cbd5e1">• Link Connect / Disconnect Intercepts</text>
+    <text x="15" y="74" font-family="JetBrains Mono, monospace" font-size="9" fill="#00e676">• RMAP Hardware Registry Polling</text>
+
+    <rect x="305" y="0" width="270" height="80" rx="6" fill="#070c18" stroke="#ffab00" />
+    <text x="15" y="23" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#ffab00">MIL-STD-1553B Dual Redundant Bus</text>
+    <text x="15" y="42" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8">• Remote Terminal (1..30) Polling</text>
+    <text x="15" y="58" font-family="JetBrains Mono, monospace" font-size="9" fill="#cbd5e1">• Mode Code 0x02 Transmit Status Word</text>
+    <text x="15" y="74" font-family="JetBrains Mono, monospace" font-size="9" fill="#00e676">• Busy / Terminal Flag Monitoring</text>
+
+    <rect x="610" y="0" width="270" height="80" rx="6" fill="#070c18" stroke="#00e676" />
+    <text x="15" y="23" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" fill="#00e676">CANopen (CiA 301)</text>
+    <text x="15" y="42" font-family="JetBrains Mono, monospace" font-size="9" fill="#94a3b8">• Bootup Announcement (COB 0x700+ID)</text>
+    <text x="15" y="58" font-family="JetBrains Mono, monospace" font-size="9" fill="#cbd5e1">• Heartbeat / Node Guarding Protocol</text>
+    <text x="15" y="74" font-family="JetBrains Mono, monospace" font-size="9" fill="#00e676">• Node State Machine Supervision</text>
+  </g>
+</svg>
